@@ -17,6 +17,7 @@ export enum UniverseChainId {
   Blast = UniswapSDKChainId.BLAST,
   Bnb = UniswapSDKChainId.BNB,
   Celo = UniswapSDKChainId.CELO,
+  Cypherium = 16166
   MonadTestnet = UniswapSDKChainId.MONAD_TESTNET,
   Optimism = UniswapSDKChainId.OPTIMISM,
   Polygon = UniswapSDKChainId.POLYGON,
@@ -37,6 +38,7 @@ export const SUPPORTED_CHAIN_IDS: UniverseChainId[] = [
   UniverseChainId.Optimism,
   UniverseChainId.Base,
   UniverseChainId.Bnb,
+  UniverseChainId.Cypherium,
   UniverseChainId.Blast,
   UniverseChainId.Avalanche,
   UniverseChainId.Celo,
