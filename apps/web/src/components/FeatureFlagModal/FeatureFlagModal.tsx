@@ -230,6 +230,7 @@ export default function FeatureFlagModal() {
           </FeatureFlagGroup>
           <FeatureFlagGroup name="New Chains">
             <FeatureFlagOption flag={FeatureFlags.Soneium} label="Enable Soneium" />
+            <FeatureFlagOption flag={FeatureFlags.Cypherium} label="Enable Cypherium" />
           </FeatureFlagGroup>
           <FeatureFlagGroup name="Network Requests">
             <DynamicConfigDropdown
