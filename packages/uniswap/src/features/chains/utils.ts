@@ -66,7 +66,13 @@ export function hexadecimalStringToInt(hex: string): number {
 }
 
 export function isL2ChainId(chainId?: UniverseChainId): boolean {
-  return chainId !== undefined && getChainInfo(chainId).networkLayer === NetworkLayer.L2
+  if (chainId === undefined) {
+    return false
+  }
+  if (chainId === UniverseChainId.Cypherium) {
+    return false
+  }
+  return getChainInfo(chainId).networkLayer === NetworkLayer.L2
 }
 
 export function isMainnetChainId(chainId?: UniverseChainId): boolean {
@@ -91,6 +97,8 @@ export function fromGraphQLChain(chain: Chain | string | undefined): UniverseCha
       return UniverseChainId.Bnb
     case Chain.Blast:
       return UniverseChainId.Blast
+    case Chain.Cypherium:
+      return UniverseChainId.Cypherium
     case Chain.Celo:
       return UniverseChainId.Celo
     case Chain.MonadTestnet:
@@ -136,6 +144,8 @@ export function fromUniswapWebAppLink(network: string | null): UniverseChainId |
       return UniverseChainId.Blast
     case Chain.Bnb.toLowerCase():
       return UniverseChainId.Bnb
+    case Chain.Cypherium.toLowerCase():
+      return UniverseChainId.Cypherium
     case Chain.Celo.toLowerCase():
       return UniverseChainId.Celo
     case Chain.MonadTestnet.toLowerCase():
@@ -177,6 +187,8 @@ export function toUniswapWebAppLink(chainId: UniverseChainId): string | null {
       return Chain.Blast.toLowerCase()
     case UniverseChainId.Bnb:
       return Chain.Bnb.toLowerCase()
+    case UniverseChainId.Cypherium:
+      return Chain.Cypherium.toLowerCase()
     case UniverseChainId.Celo:
       return Chain.Celo.toLowerCase()
     case UniverseChainId.MonadTestnet:
