@@ -125,6 +125,7 @@ describe('getEnabledChains', () => {
         UniverseChainId.Optimism,
         UniverseChainId.Base,
         UniverseChainId.Bnb,
+        UniverseChainId.Cypherium,
         UniverseChainId.Blast,
         UniverseChainId.Avalanche,
         UniverseChainId.Celo,
