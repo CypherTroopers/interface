@@ -85,6 +85,7 @@ function useGetMinAmount(chainId?: UniverseChainId, txType?: TransactionType): J
     case UniverseChainId.Base:
     case UniverseChainId.Bnb:
     case UniverseChainId.Blast:
+    case UniverseChainId.Cypherium:
     case UniverseChainId.WorldChain:
     case UniverseChainId.Zora:
     case UniverseChainId.Zksync:
