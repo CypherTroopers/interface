@@ -33,6 +33,7 @@ const chains = [
   'WORLDCHAIN',
   'ZKSYNC',
   'ZORA',
+  'CYPHERIUM',
 ]
 
 fs.readFile('./public/tokens-sitemap.xml', 'utf8', async (_err, data) => {
