@@ -10,12 +10,14 @@ export function useFeatureFlaggedChainIds(): UniverseChainId[] {
   // Example: [ChainId.BLAST]: useFeatureFlag(FeatureFlags.BLAST)
   // IMPORTANT: Don't forget to also update getEnabledChainIdsSaga
   const soneiumEnabled = useFeatureFlag(FeatureFlags.Soneium)
+  const cypheriumEnabled = useFeatureFlag(FeatureFlags.Cypherium)
 
   return useMemo(
     () =>
       filterChainIdsByFeatureFlag({
         [UniverseChainId.Soneium]: soneiumEnabled,
+        [UniverseChainId.Cypherium]: cypheriumEnabled,
       }),
-    [soneiumEnabled],
+    [soneiumEnabled, cypheriumEnabled],
   )
 }
