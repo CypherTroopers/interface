@@ -227,6 +227,7 @@ export const ElementName = {
   ChainCelo: 'chain-celo',
   ChainBNB: 'chain-bnb',
   ChainAvalanche: 'chain-avalanche',
+  ChainCypherium: 'chain-cypherium',
   ChainBase: 'chain-base',
   ChainBlast: 'chain-blast',
   ChainMonadTestnet: 'chain-monad-testnet',
