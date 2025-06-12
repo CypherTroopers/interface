@@ -11,6 +11,9 @@ export const AVALANCHE_LOGO = require('./logos/png/avalanche-logo.png')
 export const CELO_LOGO = require('./logos/png/celo-logo.png')
 export const WORLD_CHAIN_LOGO = require('./logos/png/world-chain-logo.png')
 export const ZORA_LOGO = require('./logos/png/zora-logo.png')
+export const CYPHERIUM_LOGO = {
+  uri: 'https://raw.githubusercontent.com/CypherTroopers/CommunityBridge/refs/heads/main/newfrontend/public/favicon-512x512.ico',
+}
 export const ZKSYNC_LOGO = require('./logos/png/zksync-logo.png')
 export const SONEIUM_LOGO = require('./logos/png/soneium-logo.png')
 export const UNICHAIN_LOGO = require('./logos/png/unichain-logo.png')
