@@ -48,3 +48,15 @@ The Uniswap Interface supports swapping, adding liquidity, removing liquidity an
 
 The Uniswap V1 interface for mainnet and testnets is accessible via IPFS gateways
 linked from the [v1.0.0 release](https://github.com/Uniswap/uniswap-interface/releases/tag/v1.0.0).
+
+## Feature Flags
+
+Some chains and experimental features are hidden behind feature flags. You can
+override these gates by appending the `featureFlagOverride` query parameter to
+the interface URL. For example, to enable the Cypherium network:
+
+```
+https://app.uniswap.org/swap?featureFlagOverride=cypherium
+```
+
+Multiple flags can be enabled with a comma‑separated list.
