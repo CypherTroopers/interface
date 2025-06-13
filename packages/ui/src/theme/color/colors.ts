@@ -146,6 +146,10 @@ export const networkColors = {
     light: '#000000',
     dark: '#FFFFFF',
   },
+  cypherium: {
+    light: '#4B4BFF',
+    dark: '#4B4BFF',
+  },
   worldchain: {
     light: '#222222',
     dark: '#FFFFFF',
@@ -336,6 +340,7 @@ export const colorsLight = {
   chain_324: networkColors.zksync.light,
   chain_480: networkColors.worldchain.light,
   chain_1868: networkColors.soneium.light,
+  chain_16166: networkColors.cypherium.light,
 
   // Testnets
   chain_11155111: networkColors.ethereum.light,
@@ -424,6 +429,7 @@ export const colorsDark = {
   chain_324: networkColors.zksync.dark,
   chain_480: networkColors.worldchain.dark,
   chain_1868: networkColors.soneium.dark,
+  chain_16166: networkColors.cypherium.dark,
 
   // Testnets
   chain_11155111: networkColors.ethereum.dark,
