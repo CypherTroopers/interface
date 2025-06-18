@@ -6,11 +6,11 @@ import { UniverseChainId } from 'uniswap/src/features/chains/types'
 export const MOCK_POOL_OPTION_ITEM: PoolOption = {
   type: OnchainItemListOptionType.Pool,
   poolId: '0x1234567890123456789012345678901234567890',
-  chainId: UniverseChainId.Unichain,
+  chainId: UniverseChainId.Cypherium,
   token0CurrencyInfo: {
     currencyId: '130-0x078d782b760474a361dda0af3839290b0ef57ad6',
     currency: {
-      chainId: UniverseChainId.Unichain,
+      chainId: UniverseChainId.Cypherium,
       address: '0x078d782b760474a361dda0af3839290b0ef57ad6',
       decimals: 18,
       name: 'USD Coin',
@@ -20,7 +20,7 @@ export const MOCK_POOL_OPTION_ITEM: PoolOption = {
   token1CurrencyInfo: {
     currencyId: '130-0x9151434b16b9763660705744891fA906F660EcC5',
     currency: {
-      chainId: UniverseChainId.Unichain,
+      chainId: UniverseChainId.Cypherium,
       address: '0x9151434b16b9763660705744891fA906F660EcC5',
       decimals: 18,
       name: 'USD₮0',

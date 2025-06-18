@@ -9,11 +9,9 @@ import { selectIsTestnetModeEnabled } from 'uniswap/src/features/settings/select
 export function* getEnabledChainIdsSaga() {
   const isTestnetModeEnabled = yield* select(selectIsTestnetModeEnabled)
 
-  const soneiumEnabled = getFeatureFlag(FeatureFlags.Soneium)
   const cypheriumEnabled = getFeatureFlag(FeatureFlags.Cypherium)
 
   const featureFlaggedChainIds = filterChainIdsByFeatureFlag({
-    [UniverseChainId.Soneium]: soneiumEnabled,
     [UniverseChainId.Cypherium]: cypheriumEnabled,
   })
 

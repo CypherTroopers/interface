@@ -39,7 +39,7 @@ export function selectRpcUrl(chainId: UniverseChainId, rpcType: RPCType = RPCTyp
         DEFAULT_FLASHBOTS_ENABLED,
       )
 
-      if (chainId === UniverseChainId.Mainnet && flashbotsEnabled) {
+      if (chainId === UniverseChainId.Cypherium && flashbotsEnabled) {
         const flashbotsRefundPercent = getExperimentValue<Experiments.PrivateRpc, PrivateRpcProperties, number>(
           Experiments.PrivateRpc,
           PrivateRpcProperties.RefundPercent,

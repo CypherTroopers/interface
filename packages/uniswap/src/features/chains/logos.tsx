@@ -21,32 +21,9 @@ export function useBlockExplorerLogo(chainId?: UniverseChainId): GeneratedIcon {
 }
 
 const BLOCK_EXPLORER_LOGOS_LIGHT: Record<UniverseChainId, GeneratedIcon> = {
-  [UniverseChainId.Mainnet]: EtherscanLogoLight,
-  [UniverseChainId.ArbitrumOne]: ArbiscanLogoLight,
-  [UniverseChainId.Avalanche]: BlockExplorer,
-  [UniverseChainId.Base]: EtherscanLogoLight,
-  [UniverseChainId.Blast]: BlockExplorer,
-  [UniverseChainId.Bnb]: EtherscanLogoLight,
-  [UniverseChainId.Celo]: BlockExplorer,
-  [UniverseChainId.MonadTestnet]: BlockExplorer,
-  [UniverseChainId.Optimism]: OpEtherscanLogoLight,
-  [UniverseChainId.Polygon]: PolygonscanLogoLight,
-  [UniverseChainId.Sepolia]: EtherscanLogoLight,
-  [UniverseChainId.Soneium]: BlockExplorer,
-  [UniverseChainId.Unichain]: BlockExplorer,
-  [UniverseChainId.UnichainSepolia]: BlockExplorer,
-  [UniverseChainId.WorldChain]: BlockExplorer,
-  [UniverseChainId.Zksync]: BlockExplorer,
-  [UniverseChainId.Zora]: BlockExplorer,
+  [UniverseChainId.Cypherium]: BlockExplorer,
 }
 
 const BLOCK_EXPLORER_LOGOS_DARK: Record<UniverseChainId, GeneratedIcon> = {
-  ...BLOCK_EXPLORER_LOGOS_LIGHT,
-  [UniverseChainId.Mainnet]: EtherscanLogoDark,
-  [UniverseChainId.ArbitrumOne]: ArbiscanLogoDark,
-  [UniverseChainId.Base]: EtherscanLogoDark,
-  [UniverseChainId.Bnb]: EtherscanLogoDark,
-  [UniverseChainId.Optimism]: OpEtherscanLogoDark,
-  [UniverseChainId.Polygon]: PolygonscanLogoDark,
-  [UniverseChainId.Sepolia]: EtherscanLogoDark,
+  [UniverseChainId.Cypherium]: BlockExplorer,
 }

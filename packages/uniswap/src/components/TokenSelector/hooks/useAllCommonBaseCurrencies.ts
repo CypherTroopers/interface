@@ -9,15 +9,11 @@ import { buildNativeCurrencyId, buildWrappedNativeCurrencyId, currencyId } from 
 // Use Mainnet base token addresses since TokenProjects query returns each token
 // on each network
 const baseCurrencyIds = [
-  buildNativeCurrencyId(UniverseChainId.Mainnet),
-  buildNativeCurrencyId(UniverseChainId.Polygon),
-  buildNativeCurrencyId(UniverseChainId.Bnb),
-  buildNativeCurrencyId(UniverseChainId.Celo),
-  buildNativeCurrencyId(UniverseChainId.Avalanche),
+  buildNativeCurrencyId(UniverseChainId.Cypherium),
   currencyId(USDC),
   currencyId(USDT),
   currencyId(WBTC),
-  buildWrappedNativeCurrencyId(UniverseChainId.Mainnet),
+  buildWrappedNativeCurrencyId(UniverseChainId.Cypherium),
 ]
 
 export function useAllCommonBaseCurrencies(): GqlResult<CurrencyInfo[]> {

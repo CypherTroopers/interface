@@ -54,7 +54,7 @@ function useConnectedWalletSupportedChains(): UniverseChainId[] {
 
 export function useIsModeMismatch(chainId?: UniverseChainId): boolean {
   const { isTestnetModeEnabled } = useEnabledChains()
-  return isTestnetChain(chainId ?? UniverseChainId.Mainnet) ? !isTestnetModeEnabled : isTestnetModeEnabled
+  return isTestnetChain(chainId ?? UniverseChainId.Cypherium) ? !isTestnetModeEnabled : isTestnetModeEnabled
 }
 
 export function useEnabledChains(): EnabledChainsInfo {

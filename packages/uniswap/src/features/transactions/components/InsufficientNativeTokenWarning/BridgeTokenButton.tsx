@@ -20,7 +20,7 @@ export function BridgeTokenButton({
   onPress?: () => void
 }): JSX.Element {
   const { t } = useTranslation()
-  const { foreground, background } = useNetworkColors(outputToken.currency?.chainId ?? UniverseChainId.Mainnet)
+  const { foreground, background } = useNetworkColors(outputToken.currency?.chainId ?? UniverseChainId.Cypherium)
   const primaryColor = validColor(foreground)
   const backgroundColor = validColor(background)
 

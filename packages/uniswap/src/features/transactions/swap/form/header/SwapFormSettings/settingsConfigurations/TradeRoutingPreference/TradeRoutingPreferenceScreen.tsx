@@ -48,7 +48,7 @@ export function TradeRoutingPreferenceScreen(): JSX.Element {
 
   const { chainId } = useSwapFormContext().derivedSwapInfo
   const isUniswapXSupported = getIsUniswapXSupported?.(chainId)
-  const uniswapXEnabled = uniswapXEnabledFlag && chainId !== UniverseChainId.MonadTestnet
+  const uniswapXEnabled = uniswapXEnabledFlag
   const v4SwapEnabled = useV4SwapEnabled(chainId)
   const chainName = getChainInfo(chainId).name
   const restrictionDescription = t('swap.settings.protection.subtitle.unavailable', { chainName })

@@ -13,7 +13,7 @@ export interface FavoritesState {
 
 // Default currency ids, need to be in lowercase to match slice add and remove behavior
 const WBTC_CURRENCY_ID = idFromCurrency(WBTC).toLowerCase()
-const ETH_CURRENCY_ID = idFromCurrency(Ether.onChain(UniverseChainId.Mainnet)).toLowerCase()
+const ETH_CURRENCY_ID = idFromCurrency(Ether.onChain(UniverseChainId.Cypherium)).toLowerCase()
 
 export const initialFavoritesState: FavoritesState = {
   tokens: [ETH_CURRENCY_ID, WBTC_CURRENCY_ID],
