@@ -14,13 +14,9 @@ import {
   UniverseChainInfo,
 } from 'uniswap/src/features/chains/types'
 import { ElementName } from 'uniswap/src/features/telemetry/constants'
-import { isPlaywrightEnv } from 'utilities/src/environment/env'
-import { isInterface } from 'utilities/src/platform'
 import { ONE_MINUTE_MS } from 'utilities/src/time/time'
 // No wagmi chain imports needed since only Cypherium info is included
 
-const LOCAL_MAINNET_PLAYWRIGHT_RPC_URL = 'http://127.0.0.1:8545'
-const LOCAL_BASE_PLAYWRIGHT_RPC_URL = 'http://127.0.0.1:8546'
 
 /** Address that represents native currencies on ETH, Arbitrum, etc. */
 export const DEFAULT_NATIVE_ADDRESS_LEGACY = '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
@@ -52,17 +48,6 @@ export function getQuicknodeEndpointUrl(chainId: UniverseChainId): string {
   const quicknodeChainId = getQuicknodeChainId(chainId)
 
   return `https://${config.quicknodeEndpointName}${quicknodeChainId ? `.${quicknodeChainId}` : ''}.quiknode.pro/${config.quicknodeEndpointToken}${getQuicknodeChainIdPathSuffix(chainId)}`
-}
-
-function getPlaywrightRpcUrls(url: string): { [key in RPCType]: { http: string[] } } {
-  return {
-    [RPCType.Public]: { http: [url] },
-    [RPCType.Default]: { http: [url] },
-    [RPCType.Fallback]: { http: [url] },
-    [RPCType.Interface]: { http: [url] },
-    [RPCType.Private]: { http: [url] },
-    [RPCType.PublicAlt]: { http: [url] },
-  }
 }
 
 export const UNIVERSE_CHAIN_INFO = {
