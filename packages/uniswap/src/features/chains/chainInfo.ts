@@ -36,51 +36,16 @@ export function getChainInfo(chainId: UniverseChainId): UniverseChainInfo {
 // Source: https://marketplace.quicknode.com/chains_and_networks
 export function getQuicknodeChainId(chainId: UniverseChainId): string {
   switch (chainId) {
-    case UniverseChainId.Mainnet:
+    case UniverseChainId.Cypherium:
       return ''
-    case UniverseChainId.ArbitrumOne:
-      return 'arbitrum-mainnet'
-    case UniverseChainId.Avalanche:
-      return 'avalanche-mainnet'
-    case UniverseChainId.Base:
-      return 'base-mainnet'
-    case UniverseChainId.Blast:
-      return 'blast-mainnet'
-    case UniverseChainId.Bnb:
-      return 'bsc'
-    case UniverseChainId.Celo:
-      return 'celo-mainnet'
-    case UniverseChainId.MonadTestnet:
-      return 'monad-testnet'
-    case UniverseChainId.Optimism:
-      return 'optimism'
-    case UniverseChainId.Polygon:
-      return 'matic'
-    case UniverseChainId.Sepolia:
-      return 'ethereum-sepolia'
-    case UniverseChainId.Unichain:
-      return 'unichain-mainnet'
-    case UniverseChainId.UnichainSepolia:
-      return 'unichain-sepolia'
-    case UniverseChainId.WorldChain:
-      return 'worldchain-mainnet'
-    case UniverseChainId.Zksync:
-      return 'zksync-mainnet'
-    case UniverseChainId.Zora:
-      return 'zora-mainnet'
     default:
       throw new Error(`Chain ${chainId} does not have a corresponding QuickNode chain ID`)
   }
 }
 
 // If chain requires a path suffix
-export function getQuicknodeChainIdPathSuffix(chainId: UniverseChainId): string {
-  switch (chainId) {
-    case UniverseChainId.Avalanche:
-      return '/ext/bc/C/rpc' // https://www.quicknode.com/docs/avalanche#overview
-    default:
-      return ''
-  }
+export function getQuicknodeChainIdPathSuffix(_chainId: UniverseChainId): string {
+  return ''
 }
 
 export function getQuicknodeEndpointUrl(chainId: UniverseChainId): string {

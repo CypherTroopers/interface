@@ -40,14 +40,6 @@ export enum SwapConfigKey {
 
   EthSwapMinGasAmount = 'ethSwapMinGasAmount',
   EthSendMinGasAmount = 'ethSendMinGasAmount',
-  PolygonSwapMinGasAmount = 'polygonSwapMinGasAmount',
-  PolygonSendMinGasAmount = 'polygonSendMinGasAmount',
-  AvalancheSwapMinGasAmount = 'avalancheSwapMinGasAmount',
-  AvalancheSendMinGasAmount = 'avalancheSendMinGasAmount',
-  CeloSwapMinGasAmount = 'celoSwapMinGasAmount',
-  CeloSendMinGasAmount = 'celoSendMinGasAmount',
-  MonSwapMinGasAmount = 'monSwapMinGasAmount',
-  MonSendMinGasAmount = 'monSendMinGasAmount',
   GenericL2SwapMinGasAmount = 'genericL2SwapMinGasAmount',
   GenericL2SendMinGasAmount = 'genericL2SendMinGasAmount',
 
