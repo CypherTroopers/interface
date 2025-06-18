@@ -15,21 +15,7 @@ jest.mock('uniswap/src/config', () => ({
 
 describe('getQuicknodeChainIdPathSuffix', () => {
   const testCases: Array<[UniverseChainId, string, string]> = [
-    [UniverseChainId.Avalanche, '/ext/bc/C/rpc', 'Avalanche chain'],
-    [UniverseChainId.Mainnet, '', 'Mainnet chain'],
-    [UniverseChainId.ArbitrumOne, '', 'Arbitrum chain'],
-    [UniverseChainId.Base, '', 'Base chain'],
-    [UniverseChainId.Blast, '', 'Blast chain'],
-    [UniverseChainId.Bnb, '', 'BNB chain'],
-    [UniverseChainId.Celo, '', 'Celo chain'],
-    [UniverseChainId.MonadTestnet, '', 'Monad testnet'],
-    [UniverseChainId.Optimism, '', 'Optimism chain'],
-    [UniverseChainId.Polygon, '', 'Polygon chain'],
-    [UniverseChainId.Sepolia, '', 'Sepolia testnet'],
-    [UniverseChainId.UnichainSepolia, '', 'Unichain Sepolia testnet'],
-    [UniverseChainId.WorldChain, '', 'World chain'],
-    [UniverseChainId.Zksync, '', 'ZkSync chain'],
-    [UniverseChainId.Zora, '', 'Zora chain'],
+    [UniverseChainId.Cypherium, '', 'Cypherium chain'],
   ]
 
   it.each(testCases)('returns correct path suffix for %s', (chainId, expectedSuffix, _testName) => {
@@ -43,8 +29,8 @@ describe('getQuicknodeEndpointUrl', () => {
     jest.mocked(config).quicknodeEndpointName = 'different-endpoint'
     jest.mocked(config).quicknodeEndpointToken = 'different-token'
 
-    const url = getQuicknodeEndpointUrl(UniverseChainId.Base)
-    expect(url).toBe('https://different-endpoint.base-mainnet.quiknode.pro/different-token')
+    const url = getQuicknodeEndpointUrl(UniverseChainId.Cypherium)
+    expect(url).toBe('https://different-endpoint.quiknode.pro/different-token')
 
     // Reset mock to original values
     jest.mocked(config).quicknodeEndpointName = 'test-endpoint'
@@ -59,51 +45,14 @@ describe('getQuicknodeEndpointUrl', () => {
   })
 
   it('handles all supported chains without throwing', () => {
-    const supportedChains = [
-      UniverseChainId.ArbitrumOne,
-      UniverseChainId.Avalanche,
-      UniverseChainId.Base,
-      UniverseChainId.Blast,
-      UniverseChainId.Bnb,
-      UniverseChainId.Celo,
-      UniverseChainId.MonadTestnet,
-      UniverseChainId.Optimism,
-      UniverseChainId.Polygon,
-      UniverseChainId.Sepolia,
-      UniverseChainId.UnichainSepolia,
-      UniverseChainId.WorldChain,
-      UniverseChainId.Zksync,
-      UniverseChainId.Zora,
-      UniverseChainId.Mainnet,
-    ]
-
-    supportedChains.forEach((chainId) => {
-      const url = getQuicknodeEndpointUrl(chainId)
-
-      expect(url).toEqual(
-        `https://test-endpoint${chainId === UniverseChainId.Mainnet ? '' : `.${getQuicknodeChainId(chainId)}`}.quiknode.pro/test-token-123${getQuicknodeChainIdPathSuffix(chainId)}`,
-      )
-    })
+    const url = getQuicknodeEndpointUrl(UniverseChainId.Cypherium)
+    expect(url).toEqual('https://test-endpoint.quiknode.pro/test-token-123')
   })
 })
 
 describe('getQuicknodeChainId', () => {
-  it('returns correct quicknode subdomain for each chain', () => {
-    expect(getQuicknodeChainId(UniverseChainId.Mainnet)).toBe('')
-    expect(getQuicknodeChainId(UniverseChainId.ArbitrumOne)).toBe('arbitrum-mainnet')
-    expect(getQuicknodeChainId(UniverseChainId.Avalanche)).toBe('avalanche-mainnet')
-    expect(getQuicknodeChainId(UniverseChainId.Base)).toBe('base-mainnet')
-    expect(getQuicknodeChainId(UniverseChainId.Blast)).toBe('blast-mainnet')
-    expect(getQuicknodeChainId(UniverseChainId.Bnb)).toBe('bsc')
-    expect(getQuicknodeChainId(UniverseChainId.Celo)).toBe('celo-mainnet')
-    expect(getQuicknodeChainId(UniverseChainId.MonadTestnet)).toBe('monad-testnet')
-    expect(getQuicknodeChainId(UniverseChainId.Optimism)).toBe('optimism')
-    expect(getQuicknodeChainId(UniverseChainId.Polygon)).toBe('matic')
-    expect(getQuicknodeChainId(UniverseChainId.Sepolia)).toBe('ethereum-sepolia')
-    expect(getQuicknodeChainId(UniverseChainId.UnichainSepolia)).toBe('unichain-sepolia')
-    expect(getQuicknodeChainId(UniverseChainId.WorldChain)).toBe('worldchain-mainnet')
-    expect(getQuicknodeChainId(UniverseChainId.Zksync)).toBe('zksync-mainnet')
-    expect(getQuicknodeChainId(UniverseChainId.Zora)).toBe('zora-mainnet')
+  it('returns correct quicknode subdomain for the chain', () => {
+    expect(getQuicknodeChainId(UniverseChainId.Cypherium)).toBe('')
   })
 
   it('throws error for unsupported chain', () => {

@@ -2,15 +2,7 @@ import { Chain, Image } from 'uniswap/src/data/graphql/uniswap-data-api/__genera
 import { faker } from 'uniswap/src/test/shared'
 import { createFixture } from 'uniswap/src/test/utils'
 
-export const GQL_CHAINS = [
-  Chain.Ethereum,
-  Chain.EthereumSepolia,
-  Chain.Arbitrum,
-  Chain.Optimism,
-  Chain.Polygon,
-  Chain.Base,
-  Chain.Bnb,
-]
+export const GQL_CHAINS = [Chain.Cypherium]
 
 export const image = createFixture<Image>()(() => ({
   __typename: 'Image',

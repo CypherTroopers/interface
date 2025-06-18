@@ -6,17 +6,17 @@ import { faker } from 'uniswap/src/test/shared'
 import { createFixture } from 'uniswap/src/test/utils'
 import { currencyId } from 'uniswap/src/utils/currencyId'
 
-export const MAINNET_CURRENCY = NativeCurrency.onChain(UniverseChainId.Mainnet)
-export const BASE_CURRENCY = NativeCurrency.onChain(UniverseChainId.Base)
-export const ARBITRUM_CURRENCY = NativeCurrency.onChain(UniverseChainId.ArbitrumOne)
-export const MONAD_TESTNET_CURRENCY = NativeCurrency.onChain(UniverseChainId.MonadTestnet)
-export const OPTIMISM_CURRENCY = NativeCurrency.onChain(UniverseChainId.Optimism)
-export const POLYGON_CURRENCY = NativeCurrency.onChain(UniverseChainId.Polygon)
-export const CELO_CURRENCY = NativeCurrency.onChain(UniverseChainId.Celo)
-export const AVALANCHE_CURRENCY = NativeCurrency.onChain(UniverseChainId.Avalanche)
-export const WORLD_CHAIN_CURRENCY = NativeCurrency.onChain(UniverseChainId.WorldChain)
-export const ZORA_CURRENCY = NativeCurrency.onChain(UniverseChainId.Zora)
-export const ZKSYNC_CURRENCY = NativeCurrency.onChain(UniverseChainId.Zksync)
+export const MAINNET_CURRENCY = NativeCurrency.onChain(UniverseChainId.Cypherium)
+export const BASE_CURRENCY = NativeCurrency.onChain(UniverseChainId.Cypherium)
+export const ARBITRUM_CURRENCY = NativeCurrency.onChain(UniverseChainId.Cypherium)
+export const MONAD_TESTNET_CURRENCY = NativeCurrency.onChain(UniverseChainId.Cypherium)
+export const OPTIMISM_CURRENCY = NativeCurrency.onChain(UniverseChainId.Cypherium)
+export const POLYGON_CURRENCY = NativeCurrency.onChain(UniverseChainId.Cypherium)
+export const CELO_CURRENCY = NativeCurrency.onChain(UniverseChainId.Cypherium)
+export const AVALANCHE_CURRENCY = NativeCurrency.onChain(UniverseChainId.Cypherium)
+export const WORLD_CHAIN_CURRENCY = NativeCurrency.onChain(UniverseChainId.Cypherium)
+export const ZORA_CURRENCY = NativeCurrency.onChain(UniverseChainId.Cypherium)
+export const ZKSYNC_CURRENCY = NativeCurrency.onChain(UniverseChainId.Cypherium)
 
 type CurrencyInfoOptions = {
   nativeCurrency: NativeCurrency

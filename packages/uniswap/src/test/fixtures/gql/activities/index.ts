@@ -44,7 +44,7 @@ export const assetActivity = createFixture<AssetActivity>()(() => ({
 
 export const approveAssetActivity = createFixture<AssetActivity>()(() =>
   assetActivity({
-    chain: Chain.Ethereum,
+    chain: Chain.Cypherium,
     /** @deprecated use type field in details */
     type: ActivityType.Approve,
     details: gqlTransactionDetails({
@@ -57,7 +57,7 @@ export const approveAssetActivity = createFixture<AssetActivity>()(() =>
 
 export const erc20SwapAssetActivity = createFixture<AssetActivity>()(() =>
   assetActivity({
-    chain: Chain.Ethereum,
+    chain: Chain.Cypherium,
     /** @deprecated use type field in details */
     type: ActivityType.Swap,
     details: gqlTransactionDetails({
@@ -70,7 +70,7 @@ export const erc20SwapAssetActivity = createFixture<AssetActivity>()(() =>
 
 export const erc20RecentReceiveAssetActivity = createFixture<AssetActivity>()(() =>
   assetActivity({
-    chain: Chain.Ethereum,
+    chain: Chain.Cypherium,
     /** @deprecated use type field in details */
     type: ActivityType.Receive,
     timestamp: (Date.now() - ONE_MINUTE_MS * 5) / 1000,
@@ -84,7 +84,7 @@ export const erc20RecentReceiveAssetActivity = createFixture<AssetActivity>()(()
 
 export const erc20StaleReceiveAssetActivity = createFixture<AssetActivity>()(() =>
   assetActivity({
-    chain: Chain.Ethereum,
+    chain: Chain.Cypherium,
     /** @deprecated use type field in details */
     type: ActivityType.Receive,
     timestamp: (Date.now() - STALE_TRANSACTION_TIME_MS * 2) / 1000,
