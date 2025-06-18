@@ -117,7 +117,7 @@ Fixtures can be used to override fields in other fixtures as shown in the exampl
 
 ```tsx
 const collection = nftCollection({
-  nftContracts: [nftContract({ chain: Chain.Ethereum })],
+  nftContracts: [nftContract({ chain: Chain.Cypherium })],
 });
 ```
 
