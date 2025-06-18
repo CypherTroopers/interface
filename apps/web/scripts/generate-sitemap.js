@@ -18,23 +18,7 @@ const getTopPoolsQuery = (v3Chain) => `
   }
 `
 
-const chains = [
-  'ETHEREUM',
-  'ARBITRUM',
-  'OPTIMISM',
-  'POLYGON',
-  'BASE',
-  'BNB',
-  'CELO',
-  'UNICHAIN',
-  'AVALANCHE',
-  'BLAST',
-  'SONEIUM',
-  'WORLDCHAIN',
-  'ZKSYNC',
-  'ZORA',
-  'CYPHERIUM',
-]
+const chains = ['CYPHERIUM']
 
 fs.readFile('./public/tokens-sitemap.xml', 'utf8', async (_err, data) => {
   const tokenURLs = {}
