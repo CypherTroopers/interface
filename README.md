@@ -1,11 +1,10 @@
-# Uniswap Labs: Front End Interfaces
+# Cypherium Interface
 
-This is the **public** repository for Uniswap Labs’ front-end interfaces, including the Web App, Wallet Mobile App, and Wallet Extension. Uniswap is a protocol for decentralized exchange of Ethereum-based assets.
+This repository contains a Cypherium-focused front-end derived from the Uniswap interfaces.
 
-## Interfaces
+## Interface
 
-- Web: [app.uniswap.org](https://app.uniswap.org)
-- Wallet (mobile + extension): [wallet.uniswap.org](https://wallet.uniswap.org)
+The application is focused solely on the Cypherium network.
 
 ## Install & Apps
 

@@ -1,10 +1,6 @@
-# Uniswap Labs Web Interface
+# Cypherium Web Interface
 
-## Accessing the Uniswap Interface
-
-To access the Uniswap Interface, use an IPFS gateway link from the
-[latest release](https://github.com/Uniswap/uniswap-interface/releases/latest),
-or visit [app.uniswap.org](https://app.uniswap.org).
+This application provides a minimal interface for interacting with the Cypherium network.
 
 ## Running the interface locally
 

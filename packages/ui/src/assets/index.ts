@@ -1,23 +1,7 @@
 export const ALL_NETWORKS_LOGO = require('./logos/png/all-networks-icon.png')
-export const ETHEREUM_LOGO = require('./logos/png/ethereum-logo.png')
-export const OPTIMISM_LOGO = require('./logos/png/optimism-logo.png')
-export const ARBITRUM_LOGO = require('./logos/png/arbitrum-logo.png')
-export const BASE_LOGO = require('./logos/png/base-logo.png')
-export const BNB_LOGO = require('./logos/png/bnb-logo.png')
-export const MONAD_LOGO = require('./logos/png/monad-logo.png')
-export const POLYGON_LOGO = require('./logos/png/polygon-logo.png')
-export const BLAST_LOGO = require('./logos/png/blast-logo.png')
-export const AVALANCHE_LOGO = require('./logos/png/avalanche-logo.png')
-export const CELO_LOGO = require('./logos/png/celo-logo.png')
-export const WORLD_CHAIN_LOGO = require('./logos/png/world-chain-logo.png')
-export const ZORA_LOGO = require('./logos/png/zora-logo.png')
 export const CYPHERIUM_LOGO = {
   uri: 'https://raw.githubusercontent.com/CypherTroopers/CommunityBridge/refs/heads/main/newfrontend/public/favicon-512x512.ico',
 }
-export const ZKSYNC_LOGO = require('./logos/png/zksync-logo.png')
-export const SONEIUM_LOGO = require('./logos/png/soneium-logo.png')
-export const UNICHAIN_LOGO = require('./logos/png/unichain-logo.png')
-export const UNICHAIN_SEPOLIA_LOGO = require('./logos/png/unichain-sepolia-logo.png')
 export const UNISWAP_LOGO = require('./logos/png/uniswap-logo.png')
 export const UNISWAP_LOGO_LARGE = require('./logos/png/uniswap-logo-large.png')
 export const UNISWAP_MONO_LOGO_LARGE = require('./logos/png/uniswap-mono-logo-large.png')
