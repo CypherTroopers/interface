@@ -15,31 +15,31 @@ jest.mock('uniswap/src/features/tokens/useCurrencyInfo', () => ({
 
 describe('useCurrencyInfo', () => {
   it('returns undefined if no address is provided', () => {
-    const { result } = renderHook(() => useCurrencyInfo(undefined, UniverseChainId.Mainnet))
+    const { result } = renderHook(() => useCurrencyInfo(undefined, UniverseChainId.Cypherium))
 
     expect(result.current).toBeUndefined()
   })
 
   it('returns undefined if skip is true and no common base is found', () => {
-    const { result } = renderHook(() => useCurrencyInfo(TEST_TOKEN_1.address, UniverseChainId.Mainnet, true))
+    const { result } = renderHook(() => useCurrencyInfo(TEST_TOKEN_1.address, UniverseChainId.Cypherium, true))
 
     expect(result.current).toBeUndefined()
   })
 
   describe('ERC20', () => {
     it('calls useUniswapCurrencyInfo with the correct arguments', () => {
-      renderHook(() => useCurrencyInfo(DAI.address, UniverseChainId.Mainnet))
+      renderHook(() => useCurrencyInfo(DAI.address, UniverseChainId.Cypherium))
 
-      expect(useUniswapCurrencyInfo).toHaveBeenCalledWith(`${UniverseChainId.Mainnet}-${DAI.address}`, {
+      expect(useUniswapCurrencyInfo).toHaveBeenCalledWith(`${UniverseChainId.Cypherium}-${DAI.address}`, {
         skip: undefined,
       })
     })
 
     it('calls useUniswapCurrencyInfo with the correct arguments when Currency is provided', () => {
-      const currency = new Token(UniverseChainId.Mainnet, DAI.address, 18, DAI.symbol, DAI.name)
+      const currency = new Token(UniverseChainId.Cypherium, DAI.address, 18, DAI.symbol, DAI.name)
       renderHook(() => useCurrencyInfo(currency))
 
-      expect(useUniswapCurrencyInfo).toHaveBeenCalledWith(`${UniverseChainId.Mainnet}-${DAI.address}`, {
+      expect(useUniswapCurrencyInfo).toHaveBeenCalledWith(`${UniverseChainId.Cypherium}-${DAI.address}`, {
         skip: undefined,
       })
     })
@@ -47,29 +47,29 @@ describe('useCurrencyInfo', () => {
 
   describe(`${NATIVE_CHAIN_ID}`, () => {
     it('calls useUniswapCurrencyInfo with the correct arguments', () => {
-      renderHook(() => useCurrencyInfo('ETH', UniverseChainId.Mainnet))
+      renderHook(() => useCurrencyInfo('ETH', UniverseChainId.Cypherium))
 
       expect(useUniswapCurrencyInfo).toHaveBeenCalledWith(
-        `${UniverseChainId.Mainnet}-${getChainInfo(UniverseChainId.Mainnet).nativeCurrency.address}`,
+        `${UniverseChainId.Cypherium}-${getChainInfo(UniverseChainId.Cypherium).nativeCurrency.address}`,
         { skip: undefined },
       )
     })
 
     it('calls useUniswapCurrencyInfo with the correct arguments when no address is provided', () => {
-      renderHook(() => useCurrencyInfo(undefined, UniverseChainId.Mainnet))
+      renderHook(() => useCurrencyInfo(undefined, UniverseChainId.Cypherium))
 
       expect(useUniswapCurrencyInfo).toHaveBeenCalledWith(
-        `${UniverseChainId.Mainnet}-${getChainInfo(UniverseChainId.Mainnet).nativeCurrency.address}`,
+        `${UniverseChainId.Cypherium}-${getChainInfo(UniverseChainId.Cypherium).nativeCurrency.address}`,
         { skip: undefined },
       )
     })
 
     it('calls useUniswapCurrencyInfo with the correct arguments when Currency is provided', () => {
-      const currency = NativeCurrency.onChain(UniverseChainId.Mainnet)
+      const currency = NativeCurrency.onChain(UniverseChainId.Cypherium)
       renderHook(() => useCurrencyInfo(currency))
 
       expect(useUniswapCurrencyInfo).toHaveBeenCalledWith(
-        `${UniverseChainId.Mainnet}-${getChainInfo(UniverseChainId.Mainnet).nativeCurrency.address}`,
+        `${UniverseChainId.Cypherium}-${getChainInfo(UniverseChainId.Cypherium).nativeCurrency.address}`,
         { skip: undefined },
       )
     })
