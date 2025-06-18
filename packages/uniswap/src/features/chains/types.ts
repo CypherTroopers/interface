@@ -30,32 +30,12 @@ export enum UniverseChainId {
   Zora = UniswapSDKChainId.ZORA,
 }
 
-export const SUPPORTED_CHAIN_IDS: UniverseChainId[] = [
-  UniverseChainId.Mainnet,
-  UniverseChainId.Unichain,
-  UniverseChainId.Polygon,
-  UniverseChainId.ArbitrumOne,
-  UniverseChainId.Optimism,
-  UniverseChainId.Base,
-  UniverseChainId.Bnb,
-  UniverseChainId.Cypherium,
-  UniverseChainId.Blast,
-  UniverseChainId.Avalanche,
-  UniverseChainId.Celo,
-  UniverseChainId.WorldChain,
-  UniverseChainId.Soneium,
-  UniverseChainId.Zora,
-  UniverseChainId.Zksync,
-]
+export const SUPPORTED_CHAIN_IDS: UniverseChainId[] = [UniverseChainId.Cypherium]
 
-export const SUPPORTED_TESTNET_CHAIN_IDS: UniverseChainId[] = [
-  UniverseChainId.Sepolia,
-  UniverseChainId.UnichainSepolia,
-  UniverseChainId.MonadTestnet,
-]
+export const SUPPORTED_TESTNET_CHAIN_IDS: UniverseChainId[] = []
 
 // This order is used as a fallback for chain ordering but will otherwise defer to useOrderedChainIds
-export const ALL_CHAIN_IDS: UniverseChainId[] = [...SUPPORTED_CHAIN_IDS, ...SUPPORTED_TESTNET_CHAIN_IDS]
+export const ALL_CHAIN_IDS: UniverseChainId[] = [UniverseChainId.Cypherium]
 
 export interface EnabledChainsInfo {
   chains: UniverseChainId[]
