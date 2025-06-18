@@ -32,7 +32,7 @@ query CollectionPromo($addresses: [String!]!) {
 }
 
 query DailyProtocolVolume($version: ProtocolVersion!) {
-  historicalProtocolVolume(chain: ETHEREUM, version: $version, duration: MONTH) {
+  historicalProtocolVolume(chain: CYPHERIUM, version: $version, duration: MONTH) {
     value
   }
 }
