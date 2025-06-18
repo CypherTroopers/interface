@@ -19,7 +19,7 @@ import {
 } from 'uniswap/src/utils/currencyId'
 import { INVALID_ADDRESS_TOO_SHORT, INVALID_CHAIN_ID, VALID_ADDRESS, VALID_CHAIN_ID } from 'utilities/src/test/fixtures'
 
-const ETH = NativeCurrency.onChain(UniverseChainId.Mainnet)
+const ETH = NativeCurrency.onChain(UniverseChainId.Cypherium)
 const DAI_ADDRESS = '0x6B175474E89094C44Da98b954EedeAC495271d0F'
 
 describe('currencyId', () => {
@@ -36,12 +36,12 @@ describe('currencyId', () => {
   })
   it.each([
     [DAI, `1-${DAI.address}`],
-    [ETH, `${UniverseChainId.Mainnet}-${getNativeAddress(UniverseChainId.Mainnet)}`],
+    [ETH, `${UniverseChainId.Cypherium}-${getNativeAddress(UniverseChainId.Cypherium)}`],
   ])('builds correct ID for asset=$asset = $s', (asset, expectedId) => {
     expect(currencyId(asset)).toEqual(expectedId)
   })
 
-  it.each([[UniverseChainId.Mainnet, DAI.address, `${UniverseChainId.Mainnet}-${DAI.address}`]])(
+  it.each([[UniverseChainId.Cypherium, DAI.address, `${UniverseChainId.Cypherium}-${DAI.address}`]])(
     'buildCurrencyId builds correct ID for chainId=%s + address=%s = %s',
     (chainId, address, expectedId) => {
       expect(buildCurrencyId(chainId, address)).toEqual(expectedId)
@@ -50,7 +50,7 @@ describe('currencyId', () => {
 
   it.each([
     [currencyId(DAI), currencyId(DAI), true],
-    [currencyId(DAI), `${UniverseChainId.Mainnet}-${DAI.address.toLowerCase()}`, true],
+    [currencyId(DAI), `${UniverseChainId.Cypherium}-${DAI.address.toLowerCase()}`, true],
     [currencyId(DAI), currencyId(ETH), false],
   ])(
     'areCurrencyIdsEqual returns correct comparison for currencyId1=%s and currencyId2=%s = %s',
@@ -60,7 +60,7 @@ describe('currencyId', () => {
   )
 
   it.each([
-    [ETH, getNativeAddress(UniverseChainId.Mainnet)],
+    [ETH, getNativeAddress(UniverseChainId.Cypherium)],
     [DAI, DAI.address],
   ])('currencyAddress returns correct address for asset=%s = %s', (asset, expectedAddress) => {
     expect(currencyAddress(asset)).toEqual(expectedAddress)
@@ -73,22 +73,19 @@ describe('currencyId', () => {
     expect(getCurrencyAddressForAnalytics(asset)).toEqual(expectedAddress)
   })
 
-  it.each([
-    [UniverseChainId.Mainnet, `1-0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee`],
-    [UniverseChainId.Polygon, `137-0x0000000000000000000000000000000000001010`],
-    [UniverseChainId.Bnb, `56-0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee`],
-  ])('buildNativeCurrencyId builds correct ID for chainId=%s = %s', (chainId, expectedId) => {
-    expect(buildNativeCurrencyId(chainId)).toEqual(expectedId)
-  })
+  it.each([[UniverseChainId.Cypherium, `1-0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee`]])(
+    'buildNativeCurrencyId builds correct ID for chainId=%s = %s',
+    (chainId, expectedId) => {
+      expect(buildNativeCurrencyId(chainId)).toEqual(expectedId)
+    },
+  )
 
   it.each([
-    [UniverseChainId.Mainnet, getNativeAddress(UniverseChainId.Mainnet), true],
-    [UniverseChainId.Polygon, getNativeAddress(UniverseChainId.Polygon), true],
-    [UniverseChainId.Mainnet, null, true],
-    [UniverseChainId.Mainnet, getNativeAddress(UniverseChainId.Polygon), false],
-    [UniverseChainId.Mainnet, DAI.address, false],
-    [UniverseChainId.Mainnet, 'ETH', true],
-    [UniverseChainId.Mainnet, DEFAULT_NATIVE_ADDRESS, true],
+    [UniverseChainId.Cypherium, getNativeAddress(UniverseChainId.Cypherium), true],
+    [UniverseChainId.Cypherium, null, true],
+    [UniverseChainId.Cypherium, DAI.address, false],
+    [UniverseChainId.Cypherium, 'ETH', true],
+    [UniverseChainId.Cypherium, DEFAULT_NATIVE_ADDRESS, true],
   ])(
     'isNativeCurrencyAddress returns correct result for chainId=%s + address=%s = %s',
     (chainId, address, expected) => {
@@ -98,7 +95,7 @@ describe('currencyId', () => {
 
   it.each([
     [`1-${DAI_ADDRESS}`, DAI_ADDRESS],
-    [`1-${getNativeAddress(UniverseChainId.Mainnet)}`, getNativeAddress(UniverseChainId.Mainnet)],
+    [`1-${getNativeAddress(UniverseChainId.Cypherium)}`, getNativeAddress(UniverseChainId.Cypherium)],
   ])('currencyIdToAddress returns correct address for _currencyId=%s = %s', (_currencyId, expectedAddress) => {
     expect(currencyIdToAddress(_currencyId)).toEqual(expectedAddress)
   })
@@ -106,15 +103,13 @@ describe('currencyId', () => {
   it.each([
     [`1-${DAI_ADDRESS}`, DAI_ADDRESS.toLowerCase()],
     [`1-0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee`, null],
-    ['137-0x0000000000000000000000000000000000001010', '0x0000000000000000000000000000000000001010'],
-    ['56-0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee', null],
   ])('currencyIdToGraphQLAddress returns correct address for currencyId=%s = %s', (_currencyId, expectedAddress) => {
     expect(currencyIdToGraphQLAddress(_currencyId)).toEqual(expectedAddress)
   })
 
   it.each([
-    [`1-${DAI_ADDRESS}`, UniverseChainId.Mainnet],
-    [`1-${getNativeAddress(UniverseChainId.Mainnet)}`, UniverseChainId.Mainnet],
+    [`1-${DAI_ADDRESS}`, UniverseChainId.Cypherium],
+    [`1-${getNativeAddress(UniverseChainId.Cypherium)}`, UniverseChainId.Cypherium],
     ['', null],
   ])('currencyIdToChain returns correct chain for currencyId=%s = %s', (_currencyId, expectedChain) => {
     expect(currencyIdToChain(_currencyId)).toEqual(expectedChain)

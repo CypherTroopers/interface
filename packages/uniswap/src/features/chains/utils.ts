@@ -66,17 +66,11 @@ export function hexadecimalStringToInt(hex: string): number {
 }
 
 export function isL2ChainId(chainId?: UniverseChainId): boolean {
-  if (chainId === undefined) {
-    return false
-  }
-  if (chainId === UniverseChainId.Cypherium) {
-    return false
-  }
-  return getChainInfo(chainId).networkLayer === NetworkLayer.L2
+  return false
 }
 
 export function isMainnetChainId(chainId?: UniverseChainId): boolean {
-  return chainId === UniverseChainId.Mainnet || chainId === UniverseChainId.Sepolia
+  return chainId === UniverseChainId.Cypherium
 }
 
 export function toGraphQLChain(chainId: UniverseChainId): GqlChainId {
@@ -84,43 +78,8 @@ export function toGraphQLChain(chainId: UniverseChainId): GqlChainId {
 }
 
 export function fromGraphQLChain(chain: Chain | string | undefined): UniverseChainId | null {
-  switch (chain) {
-    case Chain.Ethereum:
-      return UniverseChainId.Mainnet
-    case Chain.Arbitrum:
-      return UniverseChainId.ArbitrumOne
-    case Chain.Avalanche:
-      return UniverseChainId.Avalanche
-    case Chain.Base:
-      return UniverseChainId.Base
-    case Chain.Bnb:
-      return UniverseChainId.Bnb
-    case Chain.Blast:
-      return UniverseChainId.Blast
-    case Chain.Cypherium:
-      return UniverseChainId.Cypherium
-    case Chain.Celo:
-      return UniverseChainId.Celo
-    case Chain.MonadTestnet:
-      return UniverseChainId.MonadTestnet
-    case Chain.Optimism:
-      return UniverseChainId.Optimism
-    case Chain.Polygon:
-      return UniverseChainId.Polygon
-    case Chain.EthereumSepolia:
-      return UniverseChainId.Sepolia
-    case Chain.Unichain:
-      return UniverseChainId.Unichain
-    case Chain.Soneium:
-      return UniverseChainId.Soneium
-    case Chain.AstrochainSepolia:
-      return UniverseChainId.UnichainSepolia
-    case Chain.Worldchain:
-      return UniverseChainId.WorldChain
-    case Chain.Zksync:
-      return UniverseChainId.Zksync
-    case Chain.Zora:
-      return UniverseChainId.Zora
+  if (chain === Chain.Cypherium) {
+    return UniverseChainId.Cypherium
   }
 
   return null
@@ -131,89 +90,19 @@ export function getPollingIntervalByBlocktime(chainId?: UniverseChainId): Pollin
 }
 
 export function fromUniswapWebAppLink(network: string | null): UniverseChainId | null {
-  switch (network) {
-    case Chain.Ethereum.toLowerCase():
-      return UniverseChainId.Mainnet
-    case Chain.Arbitrum.toLowerCase():
-      return UniverseChainId.ArbitrumOne
-    case Chain.Avalanche.toLowerCase():
-      return UniverseChainId.Avalanche
-    case Chain.Base.toLowerCase():
-      return UniverseChainId.Base
-    case Chain.Blast.toLowerCase():
-      return UniverseChainId.Blast
-    case Chain.Bnb.toLowerCase():
-      return UniverseChainId.Bnb
-    case Chain.Cypherium.toLowerCase():
-      return UniverseChainId.Cypherium
-    case Chain.Celo.toLowerCase():
-      return UniverseChainId.Celo
-    case Chain.MonadTestnet.toLowerCase():
-      return UniverseChainId.MonadTestnet
-    case Chain.Optimism.toLowerCase():
-      return UniverseChainId.Optimism
-    case Chain.Polygon.toLowerCase():
-      return UniverseChainId.Polygon
-    case Chain.EthereumSepolia.toLowerCase():
-      return UniverseChainId.Sepolia
-    case Chain.Unichain.toLowerCase():
-      return UniverseChainId.Unichain
-    case Chain.Soneium.toLowerCase():
-      return UniverseChainId.Soneium
-    case Chain.AstrochainSepolia.toLowerCase():
-      return UniverseChainId.UnichainSepolia
-    case Chain.Worldchain.toLowerCase():
-      return UniverseChainId.WorldChain
-    case Chain.Zksync.toLowerCase():
-      return UniverseChainId.Zksync
-    case Chain.Zora.toLowerCase():
-      return UniverseChainId.Zora
-    default:
-      throw new Error(`Network "${network}" can not be mapped`)
+  if (network === Chain.Cypherium.toLowerCase()) {
+    return UniverseChainId.Cypherium
   }
+
+  throw new Error(`Network "${network}" can not be mapped`)
 }
 
 export function toUniswapWebAppLink(chainId: UniverseChainId): string | null {
-  switch (chainId) {
-    case UniverseChainId.Mainnet:
-      return Chain.Ethereum.toLowerCase()
-    case UniverseChainId.ArbitrumOne:
-      return Chain.Arbitrum.toLowerCase()
-    case UniverseChainId.Avalanche:
-      return Chain.Avalanche.toLowerCase()
-    case UniverseChainId.Base:
-      return Chain.Base.toLowerCase()
-    case UniverseChainId.Blast:
-      return Chain.Blast.toLowerCase()
-    case UniverseChainId.Bnb:
-      return Chain.Bnb.toLowerCase()
-    case UniverseChainId.Cypherium:
-      return Chain.Cypherium.toLowerCase()
-    case UniverseChainId.Celo:
-      return Chain.Celo.toLowerCase()
-    case UniverseChainId.MonadTestnet:
-      return Chain.MonadTestnet.toLowerCase()
-    case UniverseChainId.Optimism:
-      return Chain.Optimism.toLowerCase()
-    case UniverseChainId.Polygon:
-      return Chain.Polygon.toLowerCase()
-    case UniverseChainId.Sepolia:
-      return Chain.EthereumSepolia.toLowerCase()
-    case UniverseChainId.Unichain:
-      return Chain.Unichain.toLowerCase()
-    case UniverseChainId.Soneium:
-      return Chain.Soneium.toLowerCase()
-    case UniverseChainId.UnichainSepolia:
-      return Chain.AstrochainSepolia.toLowerCase()
-    case UniverseChainId.WorldChain:
-      return Chain.Worldchain.toLowerCase()
-    case UniverseChainId.Zksync:
-      return Chain.Zksync.toLowerCase()
-    case UniverseChainId.Zora:
-      return Chain.Zora.toLowerCase()
-    default:
-      throw new Error(`ChainID "${chainId}" can not be mapped`)
+  if (chainId === UniverseChainId.Cypherium) {
+    return Chain.Cypherium.toLowerCase()
   }
+
+  throw new Error(`ChainID "${chainId}" can not be mapped`)
 }
 
 export function filterChainIdsByFeatureFlag(featureFlaggedChainIds: {
@@ -243,7 +132,7 @@ export function getEnabledChains({
     return {
       chains: supportedTestnetChainIds,
       gqlChains: GQL_TESTNET_CHAINS,
-      defaultChainId: UniverseChainId.Sepolia as UniverseChainId,
+      defaultChainId: UniverseChainId.Cypherium as UniverseChainId,
       isTestnetModeEnabled,
     }
   }
@@ -262,7 +151,7 @@ export function getEnabledChains({
   return {
     chains: supportedChainIds,
     gqlChains: supportedGqlChains,
-    defaultChainId: UniverseChainId.Mainnet as UniverseChainId,
+    defaultChainId: UniverseChainId.Cypherium as UniverseChainId,
     isTestnetModeEnabled,
   }
 }
