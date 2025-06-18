@@ -37,7 +37,7 @@ describe('visibility slice', () => {
   describe('togglePositionVisibility', () => {
     const poolId = 'pool1'
     const tokenId = 'token1'
-    const chainId: UniverseChainId = 1
+    const chainId: UniverseChainId = UniverseChainId.Cypherium
     const positionId = 'position1'
 
     beforeEach(() => {

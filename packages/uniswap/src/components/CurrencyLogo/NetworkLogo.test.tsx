@@ -23,7 +23,7 @@ describe('NetworkLogo', () => {
   const ACTUAL_CHAIN_INFO = jest.requireActual('uniswap/src/features/chains/chainInfo').UNIVERSE_CHAIN_INFO
 
   it('renders without error', () => {
-    const tree = render(<NetworkLogo chainId={UniverseChainId.Base} />)
+    const tree = render(<NetworkLogo chainId={UniverseChainId.Cypherium} />)
 
     expect(tree).toMatchSnapshot()
   })
@@ -44,7 +44,7 @@ describe('NetworkLogo', () => {
 
 describe(TransactionSummaryNetworkLogo, () => {
   it('renders without error', () => {
-    const tree = render(<TransactionSummaryNetworkLogo chainId={UniverseChainId.Base} />)
+    const tree = render(<TransactionSummaryNetworkLogo chainId={UniverseChainId.Cypherium} />)
 
     expect(tree).toMatchSnapshot()
   })

@@ -4,8 +4,8 @@ import { getChainIdFromBackendChain, getChainIdFromChainUrlParam, getChainUrlPar
 
 describe('getChainFromChainUrlParam', () => {
   it('should return true for valid chain slug', () => {
-    const validChainName = 'ethereum'
-    expect(getChainIdFromChainUrlParam(validChainName)).toBe(UniverseChainId.Mainnet)
+    const validChainName = 'cypherium'
+    expect(getChainIdFromChainUrlParam(validChainName)).toBe(UniverseChainId.Cypherium)
   })
 
   it('should return false for undefined chain slug', () => {
@@ -25,23 +25,15 @@ describe('getChainFromChainUrlParam', () => {
 })
 
 describe('getChainUrlParam', () => {
-  it('should return url param for ethereum', () => {
-    expect(getChainUrlParam(UniverseChainId.Mainnet)).toBe('ethereum')
-  })
-
-  it('should return url param for unichain sepolia', () => {
-    expect(getChainUrlParam(UniverseChainId.UnichainSepolia)).toBe('unichain_sepolia')
+  it('should return url param for cypherium', () => {
+    expect(getChainUrlParam(UniverseChainId.Cypherium)).toBe('cypherium')
   })
 })
 
 describe('getChainIdFromBackendChain', () => {
-  it('should return url param for ethereum', () => {
-    expect(getChainIdFromBackendChain(toGraphQLChain(UniverseChainId.Mainnet))).toBe(UniverseChainId.Mainnet)
-  })
-
-  it('should return url param for unichain sepolia', () => {
-    expect(getChainIdFromBackendChain(toGraphQLChain(UniverseChainId.UnichainSepolia))).toBe(
-      UniverseChainId.UnichainSepolia,
+  it('should return url param for cypherium', () => {
+    expect(getChainIdFromBackendChain(toGraphQLChain(UniverseChainId.Cypherium))).toBe(
+      UniverseChainId.Cypherium,
     )
   })
 })
