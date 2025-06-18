@@ -20,7 +20,7 @@ jest.mock('uniswap/src/features/transactions/swap/contexts/hooks/useTransactionR
 
 describe('useSwapTxAndGasInfo', () => {
   const mockDerivedSwapInfo: DerivedSwapInfo = createMockDerivedSwapInfo(
-    UNI[UniverseChainId.Mainnet],
+    UNI[UniverseChainId.Cypherium],
     WBTC,
     '1000000000000000000',
     '1000000000',
@@ -37,14 +37,14 @@ describe('useSwapTxAndGasInfo', () => {
       action: ApprovalAction.RevokeAndPermit2Approve,
       txRequest: {
         to: '0x456',
-        chainId: 1,
+        chainId: UniverseChainId.Cypherium,
         gasLimit: '100000',
         maxFeePerGas: '300000',
         maxPriorityFeePerGas: '400000',
       },
       cancelTxRequest: {
         to: '0x789',
-        chainId: 1,
+        chainId: UniverseChainId.Cypherium,
         gasLimit: '100000',
         maxFeePerGas: '500000',
         maxPriorityFeePerGas: '600000',
@@ -84,7 +84,7 @@ describe('useSwapTxAndGasInfo', () => {
     }
 
     const mockSwapTxInfo: TransactionRequestInfo = {
-      txRequests: [{ to: '0x456', chainId: 1 }],
+      txRequests: [{ to: '0x456', chainId: UniverseChainId.Cypherium }],
       gasFeeResult: { value: '123', isLoading: false, error: null },
       gasEstimate: {
         swapEstimates: {

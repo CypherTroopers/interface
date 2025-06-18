@@ -73,7 +73,7 @@ export const createMockDerivedSwapInfo = (
   outputAmount: string,
   overrides: Partial<DerivedSwapInfo> = {},
 ): DerivedSwapInfo => ({
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Cypherium,
   currencies: {
     [CurrencyField.INPUT]: {
       currency: inputCurrency,
@@ -113,7 +113,7 @@ export const createMockDerivedSwapInfo = (
 })
 
 const createMockUniswapXOrder = (token: string): DutchOrderInfoV2 => ({
-  chainId: 1,
+  chainId: UniverseChainId.Cypherium,
   reactor: '0x00000011F84B9aa48e5f8aA8B9897600006289Be',
   swapper: '0x123',
   nonce: '1',
@@ -156,7 +156,7 @@ const createMockDutchOutput = (
 const createMockPermitData = (token: string): NullablePermit => ({
   domain: {
     name: 'Permit2',
-    chainId: 1,
+    chainId: UniverseChainId.Cypherium,
     verifyingContract: '0x000000000022d473030f116ddee9f6b43ac78ba3',
   },
   types: {

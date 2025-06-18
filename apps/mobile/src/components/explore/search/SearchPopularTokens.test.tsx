@@ -15,7 +15,7 @@ describe(SearchPopularTokens, () => {
   // TODO(MOB-3146): this test is flaky
   jest.retryTimes(3)
   it.skip('renders without error', async () => {
-    const tree = render(<SearchPopularTokens selectedChain={UniverseChainId.Mainnet} />, { resolvers })
+    const tree = render(<SearchPopularTokens selectedChain={UniverseChainId.Cypherium} />, { resolvers })
 
     // Loading should show Token loader
     expect(screen.getAllByText('Token Full Name')).toBeDefined()

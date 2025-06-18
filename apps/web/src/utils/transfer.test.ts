@@ -23,9 +23,9 @@ describe('useCreateTransfer', () => {
     const transferInfo = {
       provider: signer.provider as Web3Provider,
       account: wallet,
-      chainId: 1,
+      chainId: UniverseChainId.Cypherium,
       toAddress: '0xaDd287e6d0213e662D400d815C481b4b2ddE5d65',
-      currencyAmount: CurrencyAmount.fromRawAmount(nativeOnChain(UniverseChainId.Mainnet), 1e18),
+      currencyAmount: CurrencyAmount.fromRawAmount(nativeOnChain(UniverseChainId.Cypherium), 1e18),
     }
     const transactionHookResult = renderHook(() => useCreateTransferTransaction(transferInfo))
 
@@ -35,7 +35,7 @@ describe('useCreateTransfer', () => {
       from: wallet,
       to: '0xaDd287e6d0213e662D400d815C481b4b2ddE5d65',
       value: (1e18).toString(),
-      chainId: 1,
+      chainId: UniverseChainId.Cypherium,
     })
   })
 
