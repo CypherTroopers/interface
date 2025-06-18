@@ -57,42 +57,14 @@ export function useMaxAmountSpend({
 
 function useGetMinAmount(chainId?: UniverseChainId, txType?: TransactionType): JSBI | undefined {
   const MIN_ETH_FOR_GAS = useMinEthForGas(txType)
-  const MIN_POLYGON_FOR_GAS = useMinPolygonForGas(txType)
-  const MIN_AVALANCHE_FOR_GAS = useMinAvalancheForGas(txType)
-  const MIN_CELO_FOR_GAS = useMinCeloForGas(txType)
-  const MIN_MON_FOR_GAS = useMinMonForGas(txType)
-  const MIN_L2_FOR_GAS = useMinGenericL2ForGas(txType)
 
   if (!chainId) {
     return undefined
   }
 
   switch (chainId) {
-    case UniverseChainId.Mainnet:
-      return MIN_ETH_FOR_GAS
-    case UniverseChainId.Sepolia:
-      return MIN_ETH_FOR_GAS
-    case UniverseChainId.Polygon:
-      return MIN_POLYGON_FOR_GAS
-    case UniverseChainId.Avalanche:
-      return MIN_AVALANCHE_FOR_GAS
-    case UniverseChainId.Celo:
-      return MIN_CELO_FOR_GAS
-    case UniverseChainId.MonadTestnet:
-      return MIN_MON_FOR_GAS
-    case UniverseChainId.ArbitrumOne:
-    case UniverseChainId.Optimism:
-    case UniverseChainId.Base:
-    case UniverseChainId.Bnb:
-    case UniverseChainId.Blast:
     case UniverseChainId.Cypherium:
-    case UniverseChainId.WorldChain:
-    case UniverseChainId.Zora:
-    case UniverseChainId.Zksync:
-    case UniverseChainId.Unichain:
-    case UniverseChainId.UnichainSepolia:
-    case UniverseChainId.Soneium:
-      return MIN_L2_FOR_GAS
+      return MIN_ETH_FOR_GAS
     default:
       logger.error(new Error('unhandled chain when getting min gas amount'), {
         tags: {
@@ -100,7 +72,7 @@ function useGetMinAmount(chainId?: UniverseChainId, txType?: TransactionType): J
           function: 'getMinAmount',
         },
       })
-      return MIN_L2_FOR_GAS
+      return MIN_ETH_FOR_GAS
   }
 }
 
@@ -108,40 +80,6 @@ export function useMinEthForGas(txType?: TransactionType): JSBI {
   return useCalculateMinForGas(
     isSend(txType) ? SwapConfigKey.EthSendMinGasAmount : SwapConfigKey.EthSwapMinGasAmount,
     isSend(txType) ? 20 : 150, // .002 and .015 ETH
-  )
-}
-
-export function useMinPolygonForGas(txType?: TransactionType): JSBI {
-  return useCalculateMinForGas(
-    isSend(txType) ? SwapConfigKey.PolygonSendMinGasAmount : SwapConfigKey.PolygonSwapMinGasAmount,
-    isSend(txType) ? 75 : 600, // .0075 and .06 MATIC
-  )
-}
-
-export function useMinAvalancheForGas(txType?: TransactionType): JSBI {
-  return useCalculateMinForGas(
-    isSend(txType) ? SwapConfigKey.AvalancheSendMinGasAmount : SwapConfigKey.AvalancheSwapMinGasAmount,
-    isSend(txType) ? 25 : 200, // .0025 and .02 AVAX
-  )
-}
-
-export function useMinCeloForGas(txType?: TransactionType): JSBI {
-  return useCalculateMinForGas(
-    isSend(txType) ? SwapConfigKey.CeloSendMinGasAmount : SwapConfigKey.CeloSwapMinGasAmount,
-    isSend(txType) ? 13 : 2000, // .0013 and .2 CELO
-  )
-}
-
-export function useMinMonForGas(txType?: TransactionType): JSBI {
-  return useCalculateMinForGas(
-    isSend(txType) ? SwapConfigKey.MonSendMinGasAmount : SwapConfigKey.MonSwapMinGasAmount,
-    isSend(txType) ? 20 : 150, // .002 and .015 ETH
-  )
-}
-export function useMinGenericL2ForGas(txType?: TransactionType): JSBI {
-  return useCalculateMinForGas(
-    isSend(txType) ? SwapConfigKey.GenericL2SendMinGasAmount : SwapConfigKey.GenericL2SwapMinGasAmount,
-    isSend(txType) ? 1 : 8, // .0001 and .0008 ETH
   )
 }
 
